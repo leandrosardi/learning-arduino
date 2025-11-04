@@ -34,7 +34,7 @@ R = (Vfuente - VLED) / I = (5V - 2V) / 0.02A = 150 Ω
 
 Esto limita la corriente y protege al LED de sobrecorriente.
 
-### 3. Entnediendo Resistencias
+### 3. Entendiendo Resistencias
 
 Mirar [este video](https://www.youtube.com/watch?v=YdaiLW4WOWo) sobre cómo calcular el valor de una resistencia con el **código de colores**.
 
