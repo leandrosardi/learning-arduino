@@ -2,9 +2,9 @@
 
 Just some Arduino example and documentation.
 
-### 1. Entendiendo el Protobard.
+### 1. Entendiendo el Protoboard.
 
-Mirar [este video](https://www.youtube.com/watch?v=_3FNx3Bp5IA) para aprender a utilizar el protboard
+Mirar [este video](https://www.youtube.com/watch?v=_3FNx3Bp5IA) para aprender a utilizar el protoboard.
 
 ### 2. Voltaje de operación de los LED
 
