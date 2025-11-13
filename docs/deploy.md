@@ -66,12 +66,55 @@ Guarda el sketch, verifica y súbelo. El LED integrado del Arduino debería parp
 
 ### 6. Solución de problemas
 
-* Si el IDE no detecta el puerto:
+**Problema: El IDE no detecta el puerto.**
 
   * Revisa el cable USB.
   * Prueba otro puerto.
   * En Linux, asegúrate de tener permisos (`sudo usermod -a -G dialout tu_usuario`).
-* Si la carga falla:
+
+En algunos casos, el sistema puede reconocer el Arduino como un dispositivo USB serie (por ejemplo, con el chip CH340/CH341) pero luego desconectarlo inmediatamente. 
+
+Esto suele ocurrir en Linux cuando el servicio **BRLTTY** interfiere con el puerto serial, impidiendo que el IDE establezca comunicación. 
+
+Para resolverlo, es necesario detener y deshabilitar dicho servicio ejecutando `sudo systemctl stop brltty` y `sudo systemctl disable brltty`, o eliminarlo con `sudo apt remove brltty` si no se utiliza soporte Braille. 
+
+Una vez hecho esto, y tras añadir el usuario al grupo `dialout`, el puerto `/dev/ttyUSB0` quedará disponible y el IDE podrá detectar la placa correctamente.
+
+**Problema: Error de permisos en Linux ("Permission denied" en /dev/ttyUSB0)**
+
+En algunos sistemas Linux, al intentar subir un programa puede aparecer el error:
+
+```
+avrdude: ser_open(): can't open device "/dev/ttyUSB0": Permission denied
+```
+
+Este mensaje indica que el usuario actual no tiene permisos para acceder al puerto serie donde está conectado el Arduino. Para resolverlo:
+
+1. Verifica que el grupo `dialout` exista:
+
+   ```bash
+   getent group dialout
+   ```
+
+2. Agrega tu usuario al grupo `dialout`:
+
+   ```bash
+   sudo usermod -aG dialout tu_usuario
+   ```
+
+3. Cierra la sesión o reinicia el sistema para aplicar los cambios.
+
+4. Comprueba que tu usuario pertenece al grupo:
+
+   ```bash
+   groups
+   ```
+
+   Debe aparecer `dialout` en la lista.
+
+Una vez realizados estos pasos, el puerto `/dev/ttyUSB0` estará disponible y Arduino IDE podrá subir programas sin necesidad de ejecutar el entorno con privilegios de administrador.
+
+**Problema: La carga falla.**
 
   * Presiona el botón **RESET** del Arduino justo antes o durante la carga.
   * Verifica que la placa y el puerto correctos estén seleccionados.
