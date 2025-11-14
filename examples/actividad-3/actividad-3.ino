@@ -39,13 +39,15 @@ void loop() {
         digitalWrite(ledPin3, HIGH);
         digitalWrite(ledPin4, LOW);
         digitalWrite(ledPin5, LOW);
-    } else if (luz<700) {
+    } else 
+    if (luz<700) {
         digitalWrite(ledPin1, HIGH);
         digitalWrite(ledPin2, HIGH);
         digitalWrite(ledPin3, LOW);
         digitalWrite(ledPin4, LOW);
         digitalWrite(ledPin5, LOW);
-    } else if (luz<900) {
+    } else 
+    if (luz<900) {
         digitalWrite(ledPin1, HIGH);
         digitalWrite(ledPin2, LOW);
         digitalWrite(ledPin3, LOW);
