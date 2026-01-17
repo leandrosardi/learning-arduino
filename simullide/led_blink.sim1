@@ -1,0 +1,17 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="false" Show_Val="false" Pos="-48,-264" rotation="0" hflip="1" vflip="1" label="Uno-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="led_blink/build/arduino.avr.uno/led_blink.ino.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="Resistor" CircId="Resistor-4" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-132,-164" rotation="0" hflip="1" vflip="1" label="Resistor-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Led" CircId="Led-16" mainComp="false" Show_id="false" Show_Val="false" Pos="-176,-140" rotation="90" hflip="1" vflip="1" label="Led-16" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Connector" uid="Connector-11" startpinid="Uno-1-13" endpinid="Resistor-4-rPin" pointList="-40,-136,-116,-136,-116,-164" />
+
+<item itemtype="Connector" uid="Connector-48" startpinid="Led-16-rPin" endpinid="Uno-1-GND2" pointList="-176,-124,-40,-124,-40,-128" />
+
+<item itemtype="Connector" uid="Connector-53" startpinid="Led-16-lPin" endpinid="Resistor-4-lPin" pointList="-176,-156,-176,-164,-148,-164" />
+
+</circuit>
